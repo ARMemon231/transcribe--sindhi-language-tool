@@ -1,3 +1,4 @@
+import { GoogleGenAI } from "@google/genai";
 export const handler = async (event) => {
   try {
     const body = JSON.parse(event.body || "{}");
