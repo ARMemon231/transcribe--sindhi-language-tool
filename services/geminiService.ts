@@ -6,7 +6,7 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+
   }
 
   async processImage(base64Image: string): Promise<QuestionPaperContent> {
