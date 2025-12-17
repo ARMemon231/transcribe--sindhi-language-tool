@@ -4,7 +4,7 @@ AI-powered OCR tool for digitizing Sindhi language exam papers and handwritten n
 
 ## ✨ Features
 
-- 🎯 **High-Accuracy Sindhi OCR** - Recognizes 52 unique Sindhi characters
+- 🎯 **High-Accuracy Sindhi OCR** - Recognizes Sindhi characters
 - 📄 **Smart Formatting** - Auto-structures question papers with headers and sections
 - ✏️ **Manual Editing** - Fine-tune recognized text easily
 - 📥 **PDF Export** - Save as professional A4 PDFs
@@ -44,9 +44,6 @@ React • TypeScript • Vite • Google Gemini AI • Tailwind CSS
 
 Contributions are welcome! Fork the repo, make your changes, and submit a PR.
 
-## 📄 License
-
-MIT License - feel free to use this project.
 
 ---
 
