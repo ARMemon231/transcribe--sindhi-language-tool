@@ -1,11 +1,27 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({
-  apiKey: import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY,
-});
+export const handler = async (event: any) => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: "Method Not Allowed",
+    };
+  }
 
-export const geminiService = {
-  async processImage(base64Image: string) {
+  try {
+    const { base64Image } = JSON.parse(event.body || "{}");
+
+    if (!base64Image) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Image is required" }),
+      };
+    }
+
+    const ai = new GoogleGenAI({
+      apiKey: process.env.GEMINI_API_KEY, // ✅ SERVER ONLY
+    });
+
     const prompt = `
 You are a specialized Sindhi Script Expert.
 Convert the image into a structured digital format.
@@ -88,6 +104,19 @@ Return ONLY valid JSON.
       },
     });
 
-    return JSON.parse(response.text || "{}");
-  },
+    return {
+      statusCode: 200,
+      body: response.text || "{}",
+    };
+  } catch (error: any) {
+    console.error("Gemini OCR Error:", error);
+
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "Failed to process image",
+        details: error.message,
+      }),
+    };
+  }
 };
