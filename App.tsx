@@ -292,18 +292,7 @@ export default function App() {
                       DOWNLOAD PDF
                     </button>
 
-                    <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4 flex gap-3">
-                       <HelpCircle className="w-6 h-6 text-amber-600 shrink-0" />
-                       <div className="space-y-1">
-                          <h5 className="font-bold text-amber-900 text-xs uppercase">Can't Download?</h5>
-                          <ol className="text-[11px] text-amber-800 space-y-1 list-decimal ml-3 font-medium">
-                            <li>Click the blue "DOWNLOAD PDF" button above.</li>
-                            <li>In the window that pops up, find the <strong>"Destination"</strong> menu.</li>
-                            <li>Select <strong>"Save as PDF"</strong> instead of a printer.</li>
-                            <li>Click <strong>"Save"</strong> and choose where to store your file.</li>
-                          </ol>
-                       </div>
-                    </div>
+
 
                     <button 
                       onClick={() => setIsEditing(true)}

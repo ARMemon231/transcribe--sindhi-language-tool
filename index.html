@@ -29,27 +29,35 @@
           margin: 0 !important;
           padding: 0 !important;
         }
-        #root {
+        header, .print\:hidden {
           display: none !important;
+        }
+        main {
+          padding: 0 !important;
+          margin: 0 !important;
+          max-width: 100% !important;
         }
         #printable-area {
           display: flex !important;
           visibility: visible !important;
           position: static !important;
           width: 210mm !important;
-          height: 297mm !important;
+          min-height: 297mm !important;
           padding: 20mm !important;
-          margin: 0 !important;
+          margin: 0 auto !important;
           border: none !important;
           box-shadow: none !important;
           color: black !important;
+          page-break-after: avoid !important;
         }
-        .print-hidden {
-          display: none !important;
+        .sindhi-text {
+          font-family: 'Lateef', serif !important;
+          color: black !important;
         }
         * {
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
+          color-adjust: exact !important;
         }
       }
     </style>
